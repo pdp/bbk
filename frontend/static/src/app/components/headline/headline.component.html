@@ -1,0 +1,8 @@
+<article>
+  <img class="headLineImage" [src]="headLineImageUrl" />
+  <header class="headLineTitle">{{headLine.title | uppercase}}</header>
+  <p *ngFor="let content of headLine.content">
+    {{content}}
+  </p>
+  <footer id="articleFooter"><a href="#">LEES VERDER ></a></footer>
+</article>

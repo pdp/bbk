@@ -1,0 +1,27 @@
+<h1>UITSLAGEN</h1>
+<br />
+  <h5>Regionale gaybattle</h5>
+  <table class="table table-striped scoreTable">
+    <tr>
+      <th></th>
+      <th>Team</th>
+      <th class="number">Ronde 1</th>
+      <th class="number">Ronde 2</th>
+      <th class="number">Ronde 3</th>
+      <th class="number">Dagresultaat</th>
+      <th class="number">Dagklasse</th>
+      <th class="number">Overdracht</th>
+      <th class="number">Totaal</th>
+    </tr>
+    <tr *ngFor="let score of scores; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{score.team}}</td>
+      <td class="number">{{score.round1}}</td>
+      <td class="number">{{score.round2}}</td>
+      <td class="number">{{score.round3}}</td>
+      <td class="number">{{score.dayResult }}</td>
+      <td class="number">{{score.dayRanking}}</td>
+      <td class="number">{{score.resultTransfer}}</td>
+      <td class="total number">{{score.dayResult + score.resultTransfer}}</td>
+    </tr>
+  </table>

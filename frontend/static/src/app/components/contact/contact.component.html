@@ -1,0 +1,45 @@
+  <div class="container">
+    <h3>
+       {{contactTitle}}
+    </h3>
+
+    <p>
+       <strong> velden zijn verplicht </strong>
+    </p>
+  </div>
+
+  <div class="container">
+    <h1>Contact formulier</h1>
+    <form (ngSubmit)="handle()" [formGroup]="contactForm">
+      
+      <div class="form-group">
+        <label for="name">Naam</label>
+        <input type="text" class="form-control" id="name" formControlName = "name">
+        <div *ngIf="nameCtrl.dirty && nameCtrl.hasError('required')">Naam is een verplicht veld.</div>
+       <!-- <p>Form value: {{ contactForm.value | json }}</p>
+       <p>Form status: {{ contactForm.status | json }}</p> -->
+      </div>
+
+      <div class="form-group" id="email-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName = "email" (blur)="verifyEmail()" (focus)="focusEmail()">
+        <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')">Email is een verplicht veld.</div>
+        <div *ngIf="isInvalidEmail">Email adres is niet in een correct formaat. </div>       
+      </div> 
+
+     <div class="form-group">
+        <label for="subject">onderwerp</label>
+        <input type="text" class="form-control" id="subject" formControlName="subject">
+        <div *ngIf="subjectCtrl.dirty && subjectCtrl.hasError('required')">Onderwerp is een verplicht veld.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Bericht</label>
+        <textarea rows="10" class="form-control" id="message" formControlName="message"></textarea>
+        <div *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')">Bericht is een verplicht veld.</div>
+      </div>
+
+      <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>

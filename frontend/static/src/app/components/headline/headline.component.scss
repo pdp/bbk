@@ -1,0 +1,22 @@
+.headLineImage {
+  max-width: 60px;
+  margin-bottom: 2em;
+}
+
+.headLineTitle {
+  font-weight: bold;
+  color: #206BA4;
+  font-size: 1.5em;
+}
+
+#articleFooter {
+  background-color: #5DBCD2;
+  border: 1px solid #5DBCD2;
+  border-radius: 5px;
+  color:white;
+  font-weight: bold;
+}
+
+#articleFooter > a:link, a:visited, a:hover {
+  color:white;
+}

@@ -39,7 +39,7 @@
               <outputDirectory>target/${project.artifactId}/</outputDirectory>
               <resources>
                 <resource>
-                  <directory>../static/target/dist</directory>
+                  <directory>../static/dist</directory>
                   <filtering>false</filtering>
                 </resource>
               </resources>

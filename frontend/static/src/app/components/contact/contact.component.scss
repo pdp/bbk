@@ -1,9 +1,6 @@
 @import '../../../assets/resources/styles/base';
 
-input#email.ng-invalid.ng-touched.ng-dirty{
-    border: 1px red solid;
-}
-
-input#name.ng-invalid.ng-dirty, input#subject.ng-invalid.ng-dirty, textarea#message.ng-invalid.ng-dirty{
-    border: 1px red solid;
+.control-label:after {
+  content:"*";
+  color:red;
 }

@@ -1,45 +1,57 @@
-  <div class="container">
+<div class="container-fluid">
+  <div class="row">
     <h3>
        {{contactTitle}}
     </h3>
-
-    <p>
-       <strong> velden zijn verplicht </strong>
-    </p>
   </div>
-
-  <div class="container">
+  <div class="row">
+    <p>
+       <strong><label class="control-label">velden zijn verplicht </label></strong>
+    </p>  
+    </div>
     <h1>Contact formulier</h1>
     <form (ngSubmit)="handle()" [formGroup]="contactForm">
       
-      <div class="form-group">
-        <label for="name">Naam</label>
+      <div class="form-group required" [ngClass]="{
+          'has-danger': nameCtrl.invalid && nameCtrl.dirty, 
+          'has-success': nameCtrl.valid && nameCtrl.dirty 
+          }">
+        <label class="control-label" for="name">Naam</label>
         <input type="text" class="form-control" id="name" formControlName = "name">
-        <div *ngIf="nameCtrl.dirty && nameCtrl.hasError('required')">Naam is een verplicht veld.</div>
+        <div class="form-control-feedback" *ngIf="nameCtrl.dirty && nameCtrl.hasError('required')">Naam is een verplicht veld.</div>
        <!-- <p>Form value: {{ contactForm.value | json }}</p>
        <p>Form status: {{ contactForm.status | json }}</p> -->
       </div>
 
-      <div class="form-group" id="email-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName = "email" (blur)="verifyEmail()" (focus)="focusEmail()">
-        <div *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')">Email is een verplicht veld.</div>
-        <div *ngIf="isInvalidEmail">Email adres is niet in een correct formaat. </div>       
+      <div class="form-group required" id="email-group" class="form-group" [ngClass]="{
+          'has-danger': emailCtrl.invalid && emailCtrl.dirty, 
+          'has-success': emailCtrl.valid && emailCtrl.dirty 
+          }">
+        <label class="control-label" for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName = "email">
+        <div class="form-control-feedback" *ngIf="emailCtrl.dirty && emailCtrl.hasError('required')">Email is een verplicht veld.</div>
+        <div class="form-control-feedback" *ngIf="!emailCtrl.hasError('required') && emailCtrl.dirty && emailCtrl.touched && emailCtrl.hasError('email')">Email adres is niet in een correct formaat. </div>       
       </div> 
 
-     <div class="form-group">
-        <label for="subject">onderwerp</label>
+     <div class="form-group required" class="form-group" [ngClass]="{
+          'has-danger': subjectCtrl.invalid && subjectCtrl.dirty, 
+          'has-success': subjectCtrl.valid && subjectCtrl.dirty 
+          }">
+        <label class="control-label" for="subject">onderwerp</label>
         <input type="text" class="form-control" id="subject" formControlName="subject">
-        <div *ngIf="subjectCtrl.dirty && subjectCtrl.hasError('required')">Onderwerp is een verplicht veld.</div>
+        <div class="form-control-feedback" *ngIf="subjectCtrl.dirty && subjectCtrl.hasError('required')">Onderwerp is een verplicht veld.</div>
       </div>
 
-      <div class="form-group">
-        <label for="message">Bericht</label>
+      <div class="form-group required" class="form-group" [ngClass]="{
+          'has-danger': messageCtrl.invalid && messageCtrl.dirty, 
+          'has-success': messageCtrl.valid && nameCtrl.dirty 
+          }">
+        <label class="control-label" for="message">Bericht</label>
         <textarea rows="10" class="form-control" id="message" formControlName="message"></textarea>
-        <div *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')">Bericht is een verplicht veld.</div>
+        <div class="form-control-feedback" *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')">Bericht is een verplicht veld.</div>
       </div>
 
-      <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Submit</button>
+      <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Verstuur e-mail</button>
 
-    </form>
+    </form>  
 </div>

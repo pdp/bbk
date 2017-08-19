@@ -1,14 +1,14 @@
 import { BridgePage } from './app.po';
 
-describe('bridge App', () => {
+describe('bridge App', function() {
   let page: BridgePage;
 
   beforeEach(() => {
     page = new BridgePage();
   });
 
-  it('should display welcome message', () => {
+  it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

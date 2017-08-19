@@ -20,20 +20,16 @@ export class ContactComponent implements OnInit{
 
   contactTitle:String = 'Contact persoon: Peter De Brombeer';
 
-  isInvalidEmail: Boolean = false;
-
-
   ngOnInit(){
-    this.nameCtrl = this.contactFormBuilder.control('',Validators.required);
-    this.emailCtrl = this.contactFormBuilder.control('',[Validators.required, Validators.email]);
-    this.subjectCtrl = this.contactFormBuilder.control('',Validators.required);
-    this.messageCtrl = this.contactFormBuilder.control('',Validators.required);
+    this.nameCtrl = this.fb.control('',Validators.required);
+    this.emailCtrl = this.fb.control('',[Validators.required, Validators.email]);
+    this.subjectCtrl = this.fb.control('',Validators.required);
+    this.messageCtrl = this.fb.control('',Validators.required);
 
     this.createForm();
   }
 
   constructor(private fb: FormBuilder){ 
-    this.contactFormBuilder = fb;    
    }
 
    createForm(){
@@ -48,18 +44,5 @@ export class ContactComponent implements OnInit{
   handle(){
     console.log('handle action');
     console.log(this.contactForm.value);
-  }
-
-  focusEmail(){
-    this.emailCtrl.setErrors(null);
-    this.isInvalidEmail = false;
-  }
-
-  verifyEmail(){
-    if (!this.emailCtrl.hasError('required') && (this.emailCtrl.hasError('email'))){      
-      this.isInvalidEmail = true;
-    }else{
-      this.isInvalidEmail = false;
-    }
   }
 }

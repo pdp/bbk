@@ -44,4 +44,30 @@
             </properties>
         </profile>
     </profiles>
+    <build>
+
+    <defaultGoal>install</defaultGoal>
+    <pluginManagement>
+    <!-- Please sort the plugins alphabetically on groupId-artifactId -->
+    <plugins>
+    <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>2.6</version>
+        <configuration>
+            <warName>${project.artifactId}</warName>
+            <webappDirectory>${project.build.directory}/${project.artifactId}</webappDirectory>
+            <outputDirectory>${project.basedir}/../../.openshift/deployments</outputDirectory>
+            <packagingExcludes>
+                WEB-INF/lib/commons-logging-*.jar,
+                WEB-INF/lib/javax.servlet-api-*.jar,
+                WEB-INF/lib/jboss-*_spec-*.jar,
+                WEB-INF/lib/postgresql*.jar,
+                WEB-INF/lib/sjl-security-api-*.jar
+                WEB-INF/lib/slf4j-api-*.jar
+            </packagingExcludes>
+        </configuration>
+    </plugin>
+    </plugins>
+    </pluginManagement>
+    </build>
 </project>

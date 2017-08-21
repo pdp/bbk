@@ -68,7 +68,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>npm</executable>
+              <executable>${project.build.directory}/npm</executable>
               <commandlineArgs>install</commandlineArgs>
             </configuration>
           </execution>
@@ -79,7 +79,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>npm</executable>
+              <executable>${project.build.directory}npm</executable>
               <commandlineArgs>run-script build</commandlineArgs>
             </configuration>
           </execution>

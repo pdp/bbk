@@ -57,48 +57,48 @@
         </executions>
       </plugin>
 
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>chmod</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-              <configuration>
-                <executable>chmod</executable>
-                <arguments>
-                  <argument>a+x</argument>
-                  <argument>/opt/app-root/src/frontend/static/node/node_modules/npm</argument>
-                </arguments>
-              </configuration>
-          </execution>
-          <execution>
-            <id>npm_install</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>node/node_modules/npm</executable>
-              <commandlineArgs>install</commandlineArgs>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npm_build</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
-              <commandlineArgs>run-script build</commandlineArgs>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+      <!--<plugin>-->
+        <!--<groupId>org.codehaus.mojo</groupId>-->
+        <!--<artifactId>exec-maven-plugin</artifactId>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>chmod</id>-->
+            <!--<phase>generate-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>exec</goal>-->
+            <!--</goals>-->
+              <!--<configuration>-->
+                <!--<executable>chmod</executable>-->
+                <!--<arguments>-->
+                  <!--<argument>a+x</argument>-->
+                  <!--<argument>/opt/app-root/src/frontend/static/node/node_modules/npm</argument>-->
+                <!--</arguments>-->
+              <!--</configuration>-->
+          <!--</execution>-->
+          <!--<execution>-->
+            <!--<id>npm_install</id>-->
+            <!--<phase>generate-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>exec</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<executable>node/node_modules/npm</executable>-->
+              <!--<commandlineArgs>install</commandlineArgs>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+          <!--<execution>-->
+            <!--<id>npm_build</id>-->
+            <!--<phase>generate-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>exec</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>-->
+              <!--<commandlineArgs>run-script build</commandlineArgs>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
 
     </plugins>
   </build>

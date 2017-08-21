@@ -78,7 +78,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>chmod a+x ${project.build.directory}/node/node_modules/npm</executable>
+              <executable>${project.build.directory}/node/node_modules/npm</executable>
               <commandlineArgs>run-script build</commandlineArgs>
             </configuration>
           </execution>

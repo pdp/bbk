@@ -68,7 +68,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>npm</executable>
+              <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
               <commandlineArgs>install</commandlineArgs>
             </configuration>
           </execution>
@@ -79,7 +79,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>npm</executable>
+              <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
               <commandlineArgs>run-script build</commandlineArgs>
             </configuration>
           </execution>

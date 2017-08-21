@@ -51,7 +51,7 @@
             <configuration>
               <nodeVersion>v6.3.1</nodeVersion>
               <npmVersion>3.9.5</npmVersion>
-              <installDirectory>${project.build.directory}</installDirectory>
+              <workingDirectory>target</workingDirectory>
             </configuration>
           </execution>
         </executions>

@@ -71,7 +71,7 @@
                 <executable>chmod</executable>
                 <arguments>
                   <argument>a+x</argument>
-                  <argument>/opt/app-root/src/frontend/static/node/node_modules/npm*</argument>
+                  <argument>/opt/app-root/src/frontend/static/node/node_modules/npm</argument>
                 </arguments>
               </configuration>
           </execution>

@@ -68,7 +68,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>/node/node_modules/npm</executable>
+              <executable>node/node_modules/npm</executable>
               <commandlineArgs>install</commandlineArgs>
             </configuration>
           </execution>

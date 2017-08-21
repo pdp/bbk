@@ -51,6 +51,7 @@
             <configuration>
               <nodeVersion>v6.3.1</nodeVersion>
               <npmVersion>3.9.5</npmVersion>
+              <workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>
             </configuration>
           </execution>
         </executions>

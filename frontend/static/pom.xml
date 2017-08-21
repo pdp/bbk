@@ -51,10 +51,9 @@
             <configuration>
               <nodeVersion>v6.3.1</nodeVersion>
               <npmVersion>3.9.5</npmVersion>
+              <installDirectory>${project.build.directory}</installDirectory>
             </configuration>
           </execution>
-
-
         </executions>
       </plugin>
 
@@ -69,7 +68,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>node/node_modules/npm</executable>
+              <executable>npm</executable>
               <commandlineArgs>install</commandlineArgs>
             </configuration>
           </execution>
@@ -80,7 +79,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>node/node_modules/npm</executable>
+              <executable>npm</executable>
               <commandlineArgs>run-script build</commandlineArgs>
             </configuration>
           </execution>

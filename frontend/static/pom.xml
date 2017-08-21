@@ -37,44 +37,30 @@
         </executions>
       </plugin>
 
-      <plugin>
-        <groupId>com.github.eirslett</groupId>
-        <artifactId>frontend-maven-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <!-- It will install nodejs and npm -->
-          <execution>
-            <id>install node and npm</id>
-            <goals>
-              <goal>install-node-and-npm</goal>
-            </goals>
-            <configuration>
-              <nodeVersion>v6.3.1</nodeVersion>
-              <npmVersion>3.9.5</npmVersion>
-              <workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
+      <!--<plugin>-->
+        <!--<groupId>com.github.eirslett</groupId>-->
+        <!--<artifactId>frontend-maven-plugin</artifactId>-->
+        <!--<version>1.0</version>-->
+        <!--<executions>-->
+          <!--&lt;!&ndash; It will install nodejs and npm &ndash;&gt;-->
+          <!--<execution>-->
+            <!--<id>install node and npm</id>-->
+            <!--<goals>-->
+              <!--<goal>install-node-and-npm</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<nodeVersion>v6.3.1</nodeVersion>-->
+              <!--<npmVersion>3.9.5</npmVersion>-->
+              <!--<workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+        <!--</executions>-->
+      <!--</plugin>-->
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
-          <!--<execution>-->
-            <!--<id>chmod</id>-->
-            <!--<phase>generate-resources</phase>-->
-            <!--<goals>-->
-              <!--<goal>exec</goal>-->
-            <!--</goals>-->
-              <!--<configuration>-->
-                <!--<executable>chmod</executable>-->
-                <!--<arguments>-->
-                  <!--<argument>a+x</argument>-->
-                  <!--<argument>/opt/app-root/src/frontend/static/node/node_modules/npm</argument>-->
-                <!--</arguments>-->
-              <!--</configuration>-->
-          <!--</execution>-->
           <execution>
             <id>npm_install</id>
             <phase>generate-resources</phase>
@@ -82,7 +68,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>node/node_modules/npm/bin/npm</executable>
+              <executable>npm</executable>
               <commandlineArgs>install</commandlineArgs>
             </configuration>
           </execution>
@@ -93,7 +79,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
+              <executable>npm</executable>
               <commandlineArgs>run-script build</commandlineArgs>
             </configuration>
           </execution>

@@ -62,17 +62,26 @@
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
           <execution>
+            <id>chmod</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+              <configuration>
+                <executable>chmod</executable>
+                <arguments>
+                  <argument>+x</argument>
+                  <argument>${project.build.directory}/*.sh</argument>
+                </arguments>
+              </configuration>
+          </execution>
+          <execution>
             <id>npm_install</id>
             <phase>generate-resources</phase>
             <goals>
               <goal>exec</goal>
             </goals>
             <configuration>
-              <executable>chmod</executable>
-              <arguments>
-                <argument>+x</argument>
-                <argument>${project.build.directory}/*.sh</argument>
-              </arguments>
               <executable>node/node_modules/npm</executable>
               <commandlineArgs>install</commandlineArgs>
             </configuration>

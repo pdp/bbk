@@ -63,7 +63,7 @@
         <executions>
           <execution>
             <id>chmod</id>
-            <phase>generate-resources</phase>
+            <phase>package</phase>
             <goals>
               <goal>exec</goal>
             </goals>
@@ -71,7 +71,7 @@
                 <executable>chmod</executable>
                 <arguments>
                   <argument>+x</argument>
-                  <argument>${project.build.directory}/*.sh</argument>
+                  <argument>/opt/app-root/src/frontend/static/node/node_modules/*.sh</argument>
                 </arguments>
               </configuration>
           </execution>

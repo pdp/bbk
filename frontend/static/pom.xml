@@ -70,8 +70,8 @@
               <configuration>
                 <executable>chmod</executable>
                 <arguments>
-                  <argument>+x</argument>
-                  <argument>/opt/app-root/src/frontend/static/node/node_modules/*.sh</argument>
+                  <argument>a+x</argument>
+                  <argument>/opt/app-root/src/frontend/static/node/node_modules/npm*</argument>
                 </arguments>
               </configuration>
           </execution>

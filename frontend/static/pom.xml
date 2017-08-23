@@ -69,7 +69,7 @@
             </goals>
             <configuration>
               <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
-              <commandlineArgs>run-script install</commandlineArgs>
+              <commandlineArgs>run install</commandlineArgs>
             </configuration>
           </execution>
           <execution>

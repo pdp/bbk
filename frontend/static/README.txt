@@ -35,3 +35,11 @@ Your GitHub Pages site is currently being built from the gh-pages branch.
 4) use command ngh to publish your app (type username and password from github)
 
 Your app should be available at https://pdp.github.io/bridge/ (replace pdp with your username)
+
+ISSUE AFTER UPGRADE ANGULAR-cli
+Following error happened during ng serve:
+    Can't resolve node_modules\jquery\dist\jquery.min.js' in @angular\cli\models\webpack-configs'
+
+To solve this execute following commands:
+1) npm install --save resolve-url-loader --dev
+2) npm i --save-dev bootstrap@next bootstrap-loader tether jquery    

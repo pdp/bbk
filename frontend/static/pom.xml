@@ -49,8 +49,8 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v6.3.1</nodeVersion>
-              <npmVersion>3.9.5</npmVersion>
+              <nodeVersion>8.2.1</nodeVersion>
+              <npmVersion>5.3.0</npmVersion>
               <workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>
             </configuration>
           </execution>

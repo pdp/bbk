@@ -37,25 +37,25 @@
         </executions>
       </plugin>
 
-      <!--<plugin>-->
-        <!--<groupId>com.github.eirslett</groupId>-->
-        <!--<artifactId>frontend-maven-plugin</artifactId>-->
-        <!--<version>1.0</version>-->
-        <!--<executions>-->
-          <!--&lt;!&ndash; It will install nodejs and npm &ndash;&gt;-->
-          <!--<execution>-->
-            <!--<id>install node and npm</id>-->
-            <!--<goals>-->
-              <!--<goal>install-node-and-npm</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-              <!--<nodeVersion>v6.3.1</nodeVersion>-->
-              <!--<npmVersion>3.9.5</npmVersion>-->
-              <!--<workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>-->
-            <!--</configuration>-->
-          <!--</execution>-->
-        <!--</executions>-->
-      <!--</plugin>-->
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <!-- It will install nodejs and npm -->
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v6.3.1</nodeVersion>
+              <npmVersion>3.9.5</npmVersion>
+              <workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
@@ -69,7 +69,7 @@
             </goals>
             <configuration>
               <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
-              <commandlineArgs>install</commandlineArgs>
+              <commandlineArgs>run-script install</commandlineArgs>
             </configuration>
           </execution>
           <execution>

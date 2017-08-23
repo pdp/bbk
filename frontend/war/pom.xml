@@ -15,6 +15,7 @@
   <description>Bridgeclub BKK</description>
   <packaging>war</packaging>
 
+
   <!--<dependencies>-->
     <!--<dependency>-->
       <!--<groupId>org.jboss.spec</groupId>-->
@@ -39,7 +40,7 @@
               <outputDirectory>target/${project.artifactId}/</outputDirectory>
               <resources>
                 <resource>
-                  <directory>../static/dist</directory>
+                  <directory>../static/target/dist</directory>
                   <filtering>false</filtering>
                 </resource>
               </resources>

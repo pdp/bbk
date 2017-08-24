@@ -12,10 +12,6 @@
     "lint": "ng lint",
     "e2e": "protractor"
   },
-  "engines": {
-    "node": ">= 5.9.0",
-    "npm": ">= 1.2.0"
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.3.3",

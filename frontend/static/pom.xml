@@ -59,7 +59,7 @@
             </goals>
             <phase>generate-resources</phase>
             <configuration>
-              <arguments>run-script install</arguments>
+              <arguments>install</arguments>
             </configuration>
           </execution>
           <execution>

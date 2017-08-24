@@ -31,7 +31,7 @@
                   <directory>node_modules</directory>
                 </fileset>
               </filesets>
-              <skip>true</skip>
+              <skip>false</skip>
             </configuration>
           </execution>
         </executions>

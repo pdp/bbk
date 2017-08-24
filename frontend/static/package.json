@@ -2,19 +2,16 @@
   "name": "bridge",
   "version": "0.0.0",
   "license": "MIT",
-  "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "ng serve --disable-host-check=true",
     "build": "ng build --base-href=http://localhost:8080/web-war/ --prod",
     "test": "ng test",
-    "pree2e": "webdriver-manager update --standalone false --gecko false",
     "lint": "ng lint",
     "e2e": "protractor"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^4.3.3",
     "@angular/common": "^4.3.3",
     "@angular/compiler": "^4.3.3",
     "@angular/core": "^4.3.3",
@@ -22,18 +19,13 @@
     "@angular/http": "^4.3.3",
     "@angular/platform-browser": "^4.3.3",
     "@angular/platform-browser-dynamic": "^4.3.3",
-    "@angular/platform-server": "^4.3.3",
     "@angular/router": "^4.3.3",
     "bootstrap": "^4.0.0-alpha.6",
     "jquery": "^3.2.1",
     "core-js": "^2.4.1",
-    "font-awesome": "^4.7.0",
-    "ngx-bootstrap": "^1.8.1",
     "node-sass": "^4.5.3",
-    "raw-loader": "^0.5.1",
     "rxjs": "^5.0.1",
     "sass-loader": "^6.0.6",
-    "ts-helpers": "^1.1.1",
     "zone.js": "^0.7.2"
   },
   "devDependencies": {

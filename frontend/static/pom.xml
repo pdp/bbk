@@ -37,54 +37,72 @@
         </executions>
       </plugin>
 
-      <!--<plugin>-->
-        <!--<groupId>com.github.eirslett</groupId>-->
-        <!--<artifactId>frontend-maven-plugin</artifactId>-->
-        <!--<version>1.0</version>-->
-        <!--<executions>-->
-          <!--&lt;!&ndash; It will install nodejs and npm &ndash;&gt;-->
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <id>install node and npm</id>
+            <goals>
+              <goal>install-node-and-npm</goal>
+            </goals>
+            <configuration>
+              <nodeVersion>v8.2.1</nodeVersion>
+              <npmVersion>5.3.0</npmVersion>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm install</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>generate-resources</phase>
+            <configuration>
+              <arguments>install --production</arguments>
+            </configuration>
+          </execution>
           <!--<execution>-->
-            <!--<id>install node and npm</id>-->
+            <!--<id>npm build</id>-->
             <!--<goals>-->
-              <!--<goal>install-node-and-npm</goal>-->
+              <!--<goal>npm</goal>-->
+            <!--</goals>-->
+            <!--<phase>compile</phase>-->
+            <!--<configuration>-->
+              <!--<arguments>run build</arguments>-->
+            <!--</configuration>-->
+        <!--</execution>-->
+        </executions>
+      </plugin>
+
+      <!--<plugin>-->
+        <!--<groupId>org.codehaus.mojo</groupId>-->
+        <!--<artifactId>exec-maven-plugin</artifactId>-->
+        <!--<executions>-->
+          <!--<execution>-->
+            <!--<id>npm_install</id>-->
+            <!--<phase>generate-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>exec</goal>-->
             <!--</goals>-->
             <!--<configuration>-->
-              <!--<nodeVersion>v6.3.1</nodeVersion>-->
-              <!--<npmVersion>3.9.5</npmVersion>-->
-              <!--<workingDirectory>/opt/app-root/src/frontend/static</workingDirectory>-->
+              <!--<executable>/opt/app-root/src/frontend/static/node/node_modules/${npm.executable}</executable>-->
+              <!--<commandlineArgs>install</commandlineArgs>-->
+            <!--</configuration>-->
+          <!--</execution>-->
+          <!--<execution>-->
+            <!--<id>npm_build</id>-->
+            <!--<phase>generate-resources</phase>-->
+            <!--<goals>-->
+              <!--<goal>exec</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+              <!--<executable>/opt/app-root/src/frontend/static/node/node_modules/${npm.executable}</executable>-->
+              <!--<commandlineArgs>run-script build</commandlineArgs>-->
             <!--</configuration>-->
           <!--</execution>-->
         <!--</executions>-->
       <!--</plugin>-->
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>npm_install</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
-              <commandlineArgs>install</commandlineArgs>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npm_build</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>/opt/app-root/src/frontend/static/node/node_modules/npm</executable>
-              <commandlineArgs>run-script build</commandlineArgs>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
 
     </plugins>
   </build>

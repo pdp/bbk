@@ -28,10 +28,10 @@ DEPLOY ON GITHUB PAGES
 Angular team advises to create a docs folder in the root of your project and use this folder to deploy your app
 
 1) npm install -g angular-cli-ghpages
-2) ng build --prod --base-href "https://pdp.github.io/bridge/"
+2) ng build --prod --base-href "https://pdp.github.io/bbk/"
 3) in Github go to Settings > Options and choose gh-branche in the section:
 Source
 Your GitHub Pages site is currently being built from the gh-pages branch.
 4) use command ngh to publish your app (type username and password from github)
 
-Your app should be available at https://pdp.github.io/bridge/ (replace pdp with your username)
+Your app should be available at https://pdp.github.io/bbk/ (replace pdp with your username)

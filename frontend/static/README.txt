@@ -28,7 +28,7 @@ DEPLOY ON GITHUB PAGES
 Angular team advises to create a docs folder in the root of your project and use this folder to deploy your app
 
 1) npm install -g angular-cli-ghpages
-2) ng build --prod --base-href "https://pdp.github.io/bridge/"
+2) ng build --prod --base-href "https://pdp.github.io/bbk/"
 3) in Github go to Settings > Options and choose gh-branche in the section:
 Source
 Your GitHub Pages site is currently being built from the gh-pages branch.
@@ -43,3 +43,4 @@ Following error happened during ng serve:
 To solve this execute following commands:
 1) npm install --save resolve-url-loader --dev
 2) npm i --save-dev bootstrap@next bootstrap-loader tether jquery    
+=======

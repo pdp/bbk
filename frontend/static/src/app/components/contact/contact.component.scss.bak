@@ -1,6 +1,6 @@
 @import '../../../assets/resources/styles/base';
 
-.form-group.required .control-label:after {
+.control-label:after {
   content:"*";
   color:red;
 }

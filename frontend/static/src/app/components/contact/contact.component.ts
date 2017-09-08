@@ -33,6 +33,7 @@ export class ContactComponent implements OnInit{
    }
 
    createForm(){
+     console.log('create form');
      this.contactForm = this.fb.group({
        name: this.nameCtrl,
        email:this.emailCtrl,
@@ -41,8 +42,15 @@ export class ContactComponent implements OnInit{
      })
    }
 
-  handle(){
-    console.log('handle action');
-    console.log(this.contactForm.value);
+  submitForm(){    
+    console.log('handle submitForm');
+        
+    for (const field in this.contactForm.controls) {    
+      const control = this.contactForm.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({ onlySelf: true });
+        control.markAsDirty({ onlySelf: true });          
+      }
+    }
   }
 }

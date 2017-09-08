@@ -10,7 +10,7 @@
     </p>  
     </div>
     <h1>Contact formulier</h1>
-    <form (ngSubmit)="handle()" [formGroup]="contactForm">
+    <form (ngSubmit)="submitForm()" [formGroup]="contactForm">
       
       <div class="form-group required" [ngClass]="{
           'has-danger': nameCtrl.invalid && nameCtrl.dirty, 
@@ -51,7 +51,7 @@
         <div class="form-control-feedback" *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')">Bericht is een verplicht veld.</div>
       </div>
 
-      <button type="submit" [disabled]="contactForm.invalid" class="btn btn-primary">Verstuur e-mail</button>
+      <button type="submit" class="btn btn-primary">Verstuur e-mail</button>
 
     </form>  
 </div>

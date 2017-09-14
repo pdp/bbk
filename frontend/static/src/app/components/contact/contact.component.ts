@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class ContactComponent implements OnInit{
     this.createForm();
   }
 
-  constructor(private fb: FormBuilder){ 
+  constructor(private fb: FormBuilder, private router: Router){ 
    }
 
    createForm(){
@@ -42,9 +43,11 @@ export class ContactComponent implements OnInit{
      })
    }
 
-  submitForm(){    
-    console.log('handle submitForm');
-        
+  submitForm(){        
+    if (!this.contactForm.invalid){
+        this.router.navigateByUrl("/home");
+    }
+
     for (const field in this.contactForm.controls) {    
       const control = this.contactForm.get(field);
       if (control instanceof FormControl) {

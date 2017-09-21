@@ -43,8 +43,7 @@ public class HeadlineControllerTest {
         }
     }
 
-    // TODO fix Test returns a http 500 
-    @Ignore
+
     @Test()
     public void pageFound() {
         RestTemplate rest = new RestTemplate();        

@@ -1,4 +1,4 @@
-package be.bbk.backend;
+package be.bbk.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

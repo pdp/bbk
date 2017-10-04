@@ -1,4 +1,4 @@
-package be.bbk.backend;
+package be.bbk.application;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;

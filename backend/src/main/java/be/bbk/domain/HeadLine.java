@@ -1,4 +1,4 @@
-package be.bbk.backend;
+package be.bbk.domain;
 
 /**
  * Created by peterdp on 18/08/2017.

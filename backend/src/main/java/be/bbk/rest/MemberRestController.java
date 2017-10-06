@@ -3,7 +3,6 @@ package be.bbk.rest;
 import be.bbk.domain.HeadLine;
 import be.bbk.backend.MemberRepository;
 import be.bbk.domain.Member;
-import jersey.repackaged.com.google.common.collect.Lists;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.inject.Inject;
+import jersey.repackaged.com.google.common.collect.Lists;
+
 import java.util.List;
+
 
 /**
  * Created by peterdp on 18/08/2017.

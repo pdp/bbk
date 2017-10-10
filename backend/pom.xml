@@ -77,14 +77,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.3.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.5.0.redhat-1</version>
-		</dependency>
+			<artifactId>httpclient</artifactId>			
+		</dependency>		
 	</dependencies>
 
 	<build>
